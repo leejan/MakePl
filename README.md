@@ -56,3 +56,42 @@ MakePl是什么？可以理解成情侣之间的todolist，其实灵感主要来
 	- 近期任务
 	- 任务汇总
 	- 收藏的任务
+	
+## 模型设计
+
+### User模型
+在MakePl系统中，最重要的角色就是用户角色，所有的项目Project和任务都是围绕着用户来进行的，用户User包括如下属性，
+
+- userId
+- username
+- password
+- nickname
+- avatar
+- address
+- birthday
+- gender
+- qqOpenId
+- wechatOpenId
+- weiboOpenId
+
+用户有如下的基本行为，
+
+- 注册
+- 登录
+- 登出
+
+### Project模型
+Project在MakePl中代表项目的意思，项目就像是任务的文件夹，对相关任务进行归纳和整理的作用，它有如下属性，
+- projectId
+- name
+- thumbnail
+- color
+- expireMissionCount
+- totalMissionCount
+- superProject
+- subProjects
+- hasShare
+- members
+- isEmpty（待定）
+
+这里，有几个属性需要特别注明一下，`color`表示项目的颜色，表示了任务的重要性和级别；hasShare是该任务是否与其他人分享了，在MakePl系统中
